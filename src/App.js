@@ -24,7 +24,6 @@ const App = () => {
       setItems(result.data)
       setIsLoading(false)
     }
-
     fetchItems()
   //   axios.get(`https://www.breakingbadapi.com/api/characters?name=${query}`).then(res=>{
   //     setIsLoading(true)
