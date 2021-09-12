@@ -13,28 +13,28 @@ const App = () => {
   const [query, setQuery] = useState('')
 
   useEffect(() => {
-    // const fetchItems = async () => {
-    //   setIsLoading(true)
-    //   const result = await axios(
-    //     `https://www.breakingbadapi.com/api/characters?name=${query}`
-    //   )
-
-    //   console.log(result.data)
-
-    //   setItems(result.data)
-    //   setIsLoading(false)
-    // }
-
-    // fetchItems
-    axios.get(`https://www.breakingbadapi.com/api/characters?name=${query}`).then(res=>{
+    const fetchItems = async () => {
       setIsLoading(true)
-      console.log(res.data)
-      setItems(res.data)
+      const result = await axios(
+        `https://www.breakingbadapi.com/api/characters?name=${query}`
+      )
+
+      console.log(result.data)
+
+      setItems(result.data)
       setIsLoading(false)
-    }).catch((err)=>{
-      console.log(err)
-      setIsLoading(true)
-  })
+    }
+
+    fetchItems()
+  //   axios.get(`https://www.breakingbadapi.com/api/characters?name=${query}`).then(res=>{
+  //     setIsLoading(true)
+  //     console.log(res.data)
+  //     setItems(res.data)
+  //     setIsLoading(false)
+  //   }).catch((err)=>{
+  //     console.log(err)
+  //     setIsLoading(true)
+  // })
   }, [query])
 
   return (
