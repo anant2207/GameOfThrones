@@ -35,10 +35,14 @@ a {
 
 header {
   height: 200px;
+  
 }
 
 header img {
-  width: 200px;
+  width: 500px;
+  @media (max-width: 500px) {
+    width: 350px;
+  }
 }
 
 .center {
